@@ -14,12 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create', 'Admin\NewsController@add');
 });
 
-//演習 3 
-/* http://XXXXXX.jp/XXX というアクセスが来たときに、 
+//演習 3
+/* http://XXXXXX.jp/XXX というアクセスが来たときに、
    AAAControllerのbbbというAction に渡すRoutingの設定
 */
 Route::get('xxx', 'Admin\AAAController@bbb');
@@ -28,7 +28,14 @@ Route::get('xxx', 'Admin\AAAController@bbb');
 /* Admin/ProfileController に対して、Action を追加
 　 group で作成します。
 */
-Route::group(['prefix' => 'admin'], function() {
-     Route::get('profile/create', 'Admin\ProfileController@add');
-     Route::get('profile/edit', 'Admin\ProfileController@edit');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
 });
