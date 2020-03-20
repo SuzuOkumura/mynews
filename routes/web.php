@@ -36,8 +36,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Laravel12 演習
+/*2行目→　課題2
+　3行目→　課題3
+　のprofileController, post文*/
 Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::post('news/create', 'Admin\NewsController@create');
 });
