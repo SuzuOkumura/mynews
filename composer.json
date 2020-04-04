@@ -29,7 +29,12 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "providers": [
+                "Barryvdh\\Debugbar\\ServiceProvider"
+            ],
+            "aliases": {
+                "Debugbar": "Barryvdh\\Debugbar\\Facade"
+            }
         }
     },
     "autoload": {
