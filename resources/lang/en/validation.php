@@ -145,6 +145,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'title',
+        'body' => 'body',
+        'name' => 'name',
+        'gender'=> 'gender',
+        'hobby' => 'hobby',
+        'introduction' => 'introduction'],
 
 ];
