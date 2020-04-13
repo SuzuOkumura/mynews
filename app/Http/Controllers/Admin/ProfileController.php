@@ -52,7 +52,7 @@ class ProfileController extends Controller
     {
         //Profile Model からデータを取得する
         $profile = Profile::find($request->id);
-        if (empty($news)) {
+        if (empty($profile)) {
             abort(404);
         }
 
