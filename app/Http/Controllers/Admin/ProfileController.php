@@ -45,7 +45,7 @@ class ProfileController extends Controller
             //それ以外はすべてのプロファイルを取得する
             $posts = Profile::all();
         }
-        return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
+        return view('admin.profile.index', ['posts' => $posts,'cond_name'=>$cond_name]);
     }
 
     public function edit(Request $request)
@@ -56,7 +56,7 @@ class ProfileController extends Controller
             abort(404);
         }
 
-        return view('admin.profile.edit');
+        return view('admin.profile.edit', ['profile_form' => $profile]);
     }
 
     public function update(Request $request)
@@ -72,7 +72,7 @@ class ProfileController extends Controller
         //該当するデータを上書きして保存する
         $profile -> fill($profile_form)->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile');
     }
     
     public function Delete(Request $request)
