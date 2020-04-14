@@ -23,7 +23,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10">
-                            <select class="form-control" name='gender' value="{{ $profile_form->gender }}">
+                            <select class="form-control" name="gender" value="{{ $profile_form->gender }}">
                             <option value="">選択してください</option>
                             <option value="女性">女性</option>
                             <option value="男性">男性</option>
