@@ -56,7 +56,7 @@
                         <h2>編集履歴</h2>
                         <ul class="list-group">
                             @if ($profile_form->phistories != NULL)
-                                @foreach ($profile_form->phistories as $phistory)
+                                @foreach ($profile_form->prfhistories as $phistory)
                                     <li class="list-group-item">{{ $phistory->edited_at }}</li>
                                 @endforeach
                             @endif

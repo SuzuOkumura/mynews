@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhistoriesTable extends Migration
+class CreatePrfhistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePhistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('phistories', function (Blueprint $table) {
+        Schema::create('prfhistories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('profile_id');
             $table->string('edited_at');
@@ -29,6 +29,6 @@ class CreatePhistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phistories');
+        Schema::dropIfExists('prfhistories');
     }
 }
