@@ -16,7 +16,7 @@ class Profile extends Model
       );
       
     //Profile Modelに関連付けを行う
-    public function prfhistories()
+    public function p_histories()
     {
         return $this->hasMany('App\PHistory');
     }
