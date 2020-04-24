@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 // Profile Modelを扱えるようにする
 use App\Profile;
+use App\PHistory;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -71,6 +73,11 @@ class ProfileController extends Controller
         
         //該当するデータを上書きして保存する
         $profile -> fill($profile_form)->save();
+        
+        $phistory = new PHistory;
+        $phistory->profile_id = $profile->id;
+        $phistory->edited_at = Carbon::now();
+        $phistory->save();
         
         return redirect('admin/profile');
     }
