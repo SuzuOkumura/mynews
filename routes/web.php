@@ -10,19 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create', 'Admin\NewsController@add');
 });
+*/
 
 //演習 3
 /* http://XXXXXX.jp/XXX というアクセスが来たときに、
    AAAControllerのbbbというAction に渡すRoutingの設定
-*/
 Route::get('xxx', 'Admin\AAAController@bbb');
+*/
 
 //演習 4
 /* Admin/ProfileController に対して、Action を追加
@@ -49,3 +50,6 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'auth'], function () {
     Route::post('profile/edit', 'Admin\ProfileController@update');
     Route::get('profile/delete', 'Admin\ProfileController@delete');
 });
+
+Route::get('/', 'NewsController@index');
+Route::get('/profile', 'ProfileController@index');
